@@ -1,2 +1,6 @@
+*.suo
 TestResult.xml
+
+bin/
+obj/
 test-results/
