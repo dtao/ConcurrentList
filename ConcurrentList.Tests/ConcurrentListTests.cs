@@ -1,10 +1,6 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 
-using ConcurrentList;
 using NUnit.Framework;
 
 namespace ConcurrentList.Tests
@@ -40,7 +36,7 @@ namespace ConcurrentList.Tests
             
             var options = new ParallelOptions
             {
-                MaxDegreeOfParallelism = 10
+                MaxDegreeOfParallelism = 8
             };
             
             Parallel.For(0, 10, options, i =>
