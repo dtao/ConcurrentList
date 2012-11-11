@@ -52,7 +52,7 @@ namespace ConcurrentList.Tests
             });
             
             Assert.That(list.Count, Is.EqualTo(10000));
-            CollectionAssert.AreEquivalent(list, Enumerable.Range(0, 10000));
+            Assert.That(list, Is.EquivalentTo(Enumerable.Range(0, 10000)));
         }
     }
 }
