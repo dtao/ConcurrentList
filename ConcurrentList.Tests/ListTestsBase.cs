@@ -6,12 +6,12 @@ using NUnit.Framework;
 
 namespace ConcurrentList.Tests
 {
-    public class ThreadSafeListTest<TList> where TList : IList<int>, new()
+    public abstract class ListTestsBase
     {
         [Test]
         public virtual void SuccessfullyAddsAllItemsFromConcurrentWrites()
         {
-            var list = new TList();
+            IList<int> list = CreateList();
 
             var options = new ParallelOptions
             {
@@ -29,5 +29,7 @@ namespace ConcurrentList.Tests
             Assert.That(list.Count, Is.EqualTo(10000));
             Assert.That(list, Is.EquivalentTo(Enumerable.Range(0, 10000)));
         }
+
+        protected abstract IList<int> CreateList();
     }
 }
