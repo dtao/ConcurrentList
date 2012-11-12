@@ -39,6 +39,7 @@
     <Compile Include="AssemblyInfo.cs" />
     <Compile Include="ConcurrentListTests.cs" />
     <Compile Include="ListTests.cs" />
+    <Compile Include="ThreadSafeListTest.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
