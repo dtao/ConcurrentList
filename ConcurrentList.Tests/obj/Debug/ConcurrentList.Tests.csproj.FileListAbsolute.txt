@@ -1,9 +1,0 @@
-D:\Development\GitHub\ConcurrentList\ConcurrentList.Tests\bin\Debug\ConcurrentList.Tests.dll
-D:\Development\GitHub\ConcurrentList\ConcurrentList.Tests\bin\Debug\ConcurrentList.Tests.pdb
-D:\Development\GitHub\ConcurrentList\ConcurrentList.Tests\bin\Debug\ConcurrentList.dll
-D:\Development\GitHub\ConcurrentList\ConcurrentList.Tests\bin\Debug\nunit.framework.dll
-D:\Development\GitHub\ConcurrentList\ConcurrentList.Tests\bin\Debug\ConcurrentList.pdb
-D:\Development\GitHub\ConcurrentList\ConcurrentList.Tests\bin\Debug\nunit.framework.xml
-D:\Development\GitHub\ConcurrentList\ConcurrentList.Tests\obj\Debug\ConcurrentList.Tests.csprojResolveAssemblyReference.cache
-D:\Development\GitHub\ConcurrentList\ConcurrentList.Tests\obj\Debug\ConcurrentList.Tests.dll
-D:\Development\GitHub\ConcurrentList\ConcurrentList.Tests\obj\Debug\ConcurrentList.Tests.pdb

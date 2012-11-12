@@ -1,5 +1,0 @@
-D:\Development\GitHub\ConcurrentList\ConcurrentList\bin\Debug\ConcurrentList.dll
-D:\Development\GitHub\ConcurrentList\ConcurrentList\bin\Debug\ConcurrentList.pdb
-D:\Development\GitHub\ConcurrentList\ConcurrentList\obj\Debug\ConcurrentList.dll
-D:\Development\GitHub\ConcurrentList\ConcurrentList\obj\Debug\ConcurrentList.pdb
-D:\Development\GitHub\ConcurrentList\ConcurrentList\obj\Debug\ConcurrentList.csprojResolveAssemblyReference.cache
