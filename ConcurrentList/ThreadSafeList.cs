@@ -35,18 +35,18 @@ namespace ConcurrentList
         public abstract void CopyTo(T[] array, int arrayIndex);
 
         public IEnumerator<T> GetEnumerator()
-		{
-			int count = Count;
-			for (int i = 0; i < count; i++) {
-				yield return this[i];
-			}
-		}
-		
-		T IList<T>.this[int index]
-		{
-			get { return this[index]; }
-			set { throw new NotSupportedException(); }
-		}
+        {
+            int count = Count;
+            for (int i = 0; i < count; i++) {
+                yield return this[i];
+            }
+        }
+        
+        T IList<T>.this[int index]
+        {
+            get { return this[index]; }
+            set { throw new NotSupportedException(); }
+        }
 
         void IList<T>.Insert(int index, T item)
         {
