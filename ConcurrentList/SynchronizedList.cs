@@ -46,5 +46,14 @@ namespace ConcurrentList
             int count = m_count;
             m_list.CopyTo(0, array, arrayIndex, count);
         }
+
+        #region "Protected methods"
+
+        protected override bool IsSynchronizedBase
+        {
+            get { return true; }
+        }
+
+        #endregion
     }
 }

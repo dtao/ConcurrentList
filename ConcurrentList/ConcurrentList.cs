@@ -155,5 +155,14 @@ namespace ConcurrentList
 
             return arrayIndex;
         }
+
+        #region "Protected methods"
+
+        protected override bool IsSynchronizedBase
+        {
+            get { return false; }
+        }
+
+        #endregion
     }
 }

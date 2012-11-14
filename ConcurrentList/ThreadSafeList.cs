@@ -1,9 +1,10 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace ConcurrentList
 {
-    public abstract class ThreadSafeList<T> : IList<T>
+    public abstract class ThreadSafeList<T> : IList<T>, IList
     {
         public abstract T this[int index] { get; }
 
@@ -41,7 +42,29 @@ namespace ConcurrentList
                 yield return this[i];
             }
         }
-        
+
+        #region "Protected methods"
+
+        protected abstract bool IsSynchronizedBase { get; }
+
+        protected virtual void CopyToBase(Array array, int arrayIndex)
+        {
+            for (int i = 0; i < this.Count; ++i)
+            {
+                array.SetValue(this[i], arrayIndex + i);
+            }
+        }
+
+        protected virtual int AddBase(object value)
+        {
+            Add((T)value);
+            return Count - 1;
+        }
+
+        #endregion
+
+        #region "Explicit interface implementations"
+
         T IList<T>.this[int index]
         {
             get { return this[index]; }
@@ -73,9 +96,77 @@ namespace ConcurrentList
             throw new NotSupportedException();
         }
 
+        bool IList.IsFixedSize
+        {
+            get { return false; }
+        }
+
+        bool IList.IsReadOnly
+        {
+            get { return false; }
+        }
+
+        object IList.this[int index]
+        {
+            get { return this[index]; }
+            set { throw new NotSupportedException(); }
+        }
+
+        void IList.RemoveAt(int index)
+        {
+            throw new NotSupportedException();
+        }
+
+        void IList.Remove(object value)
+        {
+            throw new NotSupportedException();
+        }
+
+        void IList.Insert(int index, object value)
+        {
+            throw new NotSupportedException();
+        }
+
+        int IList.IndexOf(object value)
+        {
+            return IndexOf((T)value);
+        }
+
+        void IList.Clear()
+        {
+            throw new NotSupportedException();
+        }
+
+        bool IList.Contains(object value)
+        {
+            return ((IList)this).IndexOf(value) != -1;
+        }
+
+        int IList.Add(object value)
+        {
+            return AddBase(value);
+        }
+
+        bool ICollection.IsSynchronized
+        {
+            get { return IsSynchronizedBase; }
+        }
+
+        object ICollection.SyncRoot
+        {
+            get { return null; }
+        }
+
+        void ICollection.CopyTo(Array array, int arrayIndex)
+        {
+            CopyToBase(array, arrayIndex);
+        }
+
         System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
         }
+
+        #endregion
     }
 }
