@@ -1,8 +1,9 @@
 `ConcurrentList<T>` is an implementation of the `IList<T>` interface designed for lock-free concurrency, with the following notable omissions\*:
 
-1. `Remove`
-2. `RemoveAt`
-3. `Insert`
+1. `Insert`
+2. `Remove`
+3. `RemoveAt`
+4. `Clear`
 
 In other words, `ConcurrentList<T>` is an *append-only* collection type supporting random indexed access to its elements.
 
