@@ -9,7 +9,7 @@ In other words, `ConcurrentList<T>` is an *append-only* collection type supporti
 
 The design of this data structure is described in the following post from the blog The Philosopher Developer:
 
-http://philosopherdeveloper.wordpress.com/2011/02/23/how-to-build-a-thread-safe-lock-free-resizable-array/
+http://philosopherdeveloper.com/posts/how-to-build-a-thread-safe-lock-free-resizable-array.html
 
 For comparison purposes, this library also includes a `SynchronizedList<T>` type, which is a thin wrapper around the BCL's `List<T>` class with the appropriate operations synchronized via `lock` statements.
 
